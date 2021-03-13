@@ -1,10 +1,11 @@
 <template>
   <div class="" v-if="loading">loading</div>
   <div class="drinks" v-else>
-    <div class="drink" v-for="drink in drinks" :key="drink.idDrink">
-      <h2>{{ drink.strDrink }}</h2>
-      <img class="drink-img" :src="drink.strDrinkThumb" :alt="drink.strDrink" />
-    </div>
+    <DrinksListItem
+      v-for="drink in drinks"
+      :key="drink.idDrink"
+      :drink="drink"
+    />
   </div>
 </template>
 
@@ -12,9 +13,13 @@
 import { ref, defineComponent, Ref, watch, toRefs } from "vue";
 import fetchDrinks from "../composables/fetchDrinks";
 import Drink from "../interfaces/Drink";
+import DrinksListItem from "./DrinksListItem.vue";
 
 export default defineComponent({
   name: "DrinksList",
+  components: {
+    DrinksListItem
+  },
   props: {
     name: String
   },
@@ -55,17 +60,8 @@ export default defineComponent({
 
 <style scoped>
 .drinks {
-  display: flex;
-  flex-flow: row wrap;
+  margin: 10px auto;
+  width:700px;
 }
-.drink {
-  margin: 10px;
-  padding: 10px;
-  flex: 1 200px;
-  border: 1px solid;
-}
-.drink-img {
-  width: 200px;
-  height: 200px;
-}
+
 </style>
