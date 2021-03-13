@@ -1,16 +1,17 @@
 // fetched Drink interface
 export default interface Drink {
   idDrink: String;
-  strAlcoholic: String;
+  strDrink: String; // name
+  strDrinkThumb: String; // image
+
+  strTags: String;
   strCategory: String;
-  strCreativeCommonsConfirmed: String;
-  strDrink: String;
-  strDrinkAlternate: String;
-  strDrinkThumb: String;
-  strGlass: String;
   strIBA: String;
-  strImageAttribution: String;
-  strImageSource: String;
+  strAlcoholic: String;
+  strGlass: String;
+
+  strInstructions: String;
+
   strIngredient1: String;
   strIngredient2: String;
   strIngredient3: String;
@@ -26,8 +27,7 @@ export default interface Drink {
   strIngredient13: String;
   strIngredient14: String;
   strIngredient15: String;
-  strInstructions: String;
-  strInstructionsDE: String;
+  
   strMeasure1: String;
   strMeasure2: String;
   strMeasure3: String;
@@ -43,5 +43,4 @@ export default interface Drink {
   strMeasure13: String;
   strMeasure14: String;
   strMeasure15: String;
-  strTags: String;
 }
