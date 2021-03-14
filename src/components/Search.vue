@@ -1,5 +1,12 @@
 <template>
-  <input type="text" @input="handleOnChange" autofocus />
+  <div class="input">
+    <input
+      type="text"
+      @input="handleOnChange"
+      autofocus
+      placeholder="Search cocktail"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,19 +37,24 @@ export default defineComponent({
 </script>
 
 <style scoped>
-a {
-  color: #42b983;
+.input {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
 }
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
+::placeholder {
+  color: lightgray;
 }
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+input {
+  width: 694px;
+  border-radius: 0.3rem;
+  font-size: 1.5rem;
+  border: 1px solid lightgray;
+  transition: box-shadow 1s;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 0 3pt 2pt lightblue;
+  transition: box-shadow 1s;
 }
 </style>
