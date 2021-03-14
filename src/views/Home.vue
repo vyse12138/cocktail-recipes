@@ -1,6 +1,7 @@
 <template>
-  <Search v-model:name="name"/>
+  <Search v-model:name="name" />
   <DrinksList :name="name" />
+
 </template>
 
 <script lang="ts">
@@ -8,10 +9,11 @@ import { reactive, computed, ref, defineComponent, toRef, Ref } from "vue";
 import { key } from "../store";
 import { useStore } from "vuex";
 import fetchDrinks from "../composables/fetchDrinks";
-import DrinksList from "../components/DrinksList.vue";
+import DrinksList from "../components/DrinkList/DrinksList.vue";
 import Search from "../components/Search.vue";
 
 export default defineComponent({
+  name: "Home",
   components: {
     DrinksList,
     Search
