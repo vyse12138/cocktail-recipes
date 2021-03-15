@@ -1,9 +1,9 @@
 <template>
   <div class="navigation">
     <div class="container">
-      <a class="logo" href="https://github.com/Vyse12138/vue-cocktail">
+      <router-link class="logo" to="/">
         <img class="logo" src="../assets/logo.png" alt="logo" height="50" width="50"/>
-      </a>
+      </router-link>
       <h1 class="name">Cocktail Recipes</h1>
       <a
         class="logo"

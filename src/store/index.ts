@@ -1,14 +1,14 @@
-import { InjectionKey } from 'vue'
-import { createStore, Store } from 'vuex'
+import { InjectionKey } from "vue";
+import { createStore, Store } from "vuex";
 
 // define your typings for the store state
 interface State {
-  count: number,
-  loading: boolean
+  count: number;
+  loading: boolean;
 }
 
 // define injection key
-export const key: InjectionKey<Store<State>> = Symbol()
+export const key: InjectionKey<Store<State>> = Symbol();
 
 export const store = createStore<State>({
   state: {
@@ -23,4 +23,4 @@ export const store = createStore<State>({
       state.loading = !state.loading;
     }
   }
-})
+});

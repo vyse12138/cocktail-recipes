@@ -1,11 +1,9 @@
 <template>
   <Navigation />
   <router-view />
-
 </template>
 
 <script lang="ts">
-
 import { defineComponent } from "vue";
 import Navigation from "./components/Navigation.vue";
 
@@ -19,11 +17,14 @@ export default defineComponent({
 
 <style>
 html {
-  overflow-y: visible;
   background-color: #f4f5f5;
+
+
 }
 body {
   margin: 0px;
+  overflow-x: hidden;
+  width: 100vw;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
