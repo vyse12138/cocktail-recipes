@@ -1,7 +1,5 @@
 <template>
-  <keep-alive>
   <DrinksListLoading v-if="loading" />
-    </keep-alive>
   <div class="drinks" v-if="!loading && drinks">
     <DrinksListItem
       v-for="drink in drinks"
@@ -11,8 +9,6 @@
   </div>
 
   <DrinksListEmpty class="drinks" v-if="!loading && !drinks" />
-
-
 </template>
 
 <script lang="ts">
@@ -75,7 +71,9 @@ export default defineComponent({
 
 <style scoped>
 .drinks {
-  margin: 10px auto;
+  margin: 10px;
   width: 700px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  border-radius: 2px;
 }
 </style>

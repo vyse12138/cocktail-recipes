@@ -1,12 +1,7 @@
 <template>
-  <div class="home">
-    <div class="drink">
-      <Search v-model:name="name" />
-      <DrinksList :name="name" />
-    </div>
+  <Search v-model:name="name" />
+  <DrinksList :name="name" />
 
-    <Side class="side" />
-  </div>
 </template>
 
 <script lang="ts">
@@ -16,14 +11,12 @@ import { useStore } from "vuex";
 import fetchDrinks from "../composables/fetchDrinks";
 import DrinksList from "../components/DrinkList/DrinksList.vue";
 import Search from "../components/Search.vue";
-import Side from "../components/Side/Side.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
     DrinksList,
-    Search,
-    Side
+    Search
   },
   setup() {
     const name = ref("ma");
@@ -34,17 +27,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style scoped>
-.home {
-  display: flex;
-  max-width: 960px;
-  margin: 0 auto;
-}
-.drink {
-  flex: 1 0 700px;
-}
-.side {
-  flex: 0 0 auto;
-}
-</style>

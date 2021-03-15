@@ -1,13 +1,11 @@
 <template>
   <div class="loading">
     <div class="drink" v-for="item in items" :key="item">
-      <transition-group name="breath">
-        <div v-if="show" class="drink-text">
-          <h4 class="drink-text-title" />
-          <p class="drink-text-desc" />
-        </div>
-        <div v-if="show" class="drink-img" />
-      </transition-group>
+      <div class="drink-text">
+        <h4 class="drink-text-title" />
+        <p class="drink-text-desc" />
+      </div>
+      <div class="drink-img" />
     </div>
   </div>
 </template>
@@ -17,24 +15,14 @@ import { defineComponent, ref, onUnmounted, onMounted } from "vue";
 
 export default defineComponent({
   setup() {
-    const show = ref(true);
-
-    let loadingBreathEffect = setInterval(() => {
-      show.value = !show.value;
-      console.log(show.value);
-    }, 1000);
-
-    onUnmounted(() => {
-      clearInterval(loadingBreathEffect);
-    });
-    return { show, items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };
+    return { items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };
   }
 });
 </script>
 
 <style scoped>
 .loading {
-  margin: 10px auto;
+  margin: 10px;
   width: 700px;
 }
 .drink {
@@ -66,16 +54,5 @@ export default defineComponent({
   flex: 0 0 auto;
   width: 100px;
   height: 100px;
-}
-
-.breath-enter-active {
-  transition: opacity 1s ease;
-}
-.breath-leave-active {
-  transition: opacity 1s ease;
-}
-.breath-enter-from,
-.breath-leave-to {
-  opacity: 0.5;
 }
 </style>

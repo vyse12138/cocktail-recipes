@@ -1,23 +1,22 @@
 <template>
   <div class="empty">
     <div class="drink">
-    <div class="drink-text">
-      <h4 class="drink-text-title">Oops, can't find anything </h4>
-      <p class="drink-text-desc"> :(</p>
+      <div class="drink-text">
+        <h4 class="drink-text-title">Oops, can't find anything</h4>
+        <p class="drink-text-desc">:(</p>
+      </div>
+      <img
+        class="drink-img"
+        src="../../assets/not-found.png"
+        alt="nothing found"
+      />
     </div>
-    <img
-      class="drink-img"
-      src="../../assets/not-found.png"
-      alt="nothing found"
-    />
-    </div>
-
   </div>
 </template>
 
 <style scoped>
 .empty {
-  margin: 10px auto;
+  margin: 10px;
   width: 700px;
 }
 .drink {
