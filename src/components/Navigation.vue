@@ -2,14 +2,14 @@
   <div class="navigation">
     <div class="container">
       <a class="logo" href="https://github.com/Vyse12138/vue-cocktail">
-        <img class="logo" src="../assets/logo.png" alt="logo" />
+        <img class="logo" src="../assets/logo.png" alt="logo" height="50" width="50"/>
       </a>
       <h1 class="name">Cocktail Recipes</h1>
       <a
         class="logo"
         href="https://github.com/Vyse12138/vue-cocktail"
         target="_blank"
-        ><img src="../assets/GitHub.png" alt="logo"
+        ><img src="../assets/GitHub.svg" alt="GitHub" height="35" width="35"
       /></a>
     </div>
   </div>
@@ -38,7 +38,6 @@ export default defineComponent({
 }
 .logo {
   flex: 0 0 auto;
-
   align-self: center;
 }
 .name {
