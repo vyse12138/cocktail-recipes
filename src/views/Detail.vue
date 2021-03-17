@@ -1,5 +1,5 @@
 <template>
-<DrinkLoading v-if="loading"/>
+  <DrinkLoading v-if="loading" />
   <div class="detail" v-if="!loading && drink">
     <div class="drink">
       <DrinkDetail :drink="drink" />

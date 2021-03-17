@@ -1,17 +1,14 @@
 <template>
   <div class="intro">
     <h2>
-
-    {{drink.strDrink}}
-
+      {{ drink.strDrink }}
     </h2>
-  <img class='intro-image' :src="drink.strDrinkThumb" :alt="drink.strDrink">
-
+    <img class="intro-image" :src="drink.strDrinkThumb" :alt="drink.strDrink" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType,toRefs} from "vue";
+import { defineComponent, PropType, toRefs } from "vue";
 import Drink from "../../interfaces/Drink";
 
 export default defineComponent({
@@ -22,9 +19,9 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { drink } = toRefs(props); // destructure props
-    
-    return {drink};
+    const drink = props.drink; // no need to be reactive, destructure directly
+
+    return { drink };
   }
 });
 </script>
@@ -33,7 +30,7 @@ export default defineComponent({
 .intro {
   width: 240px;
   background-color: #ffffff;
-
+  height: 296px;
   box-shadow: 0px 0px 4px 1px lightgray;
   border-radius: 2px;
   text-align: center;
@@ -41,8 +38,7 @@ export default defineComponent({
 .intro-image {
   box-shadow: 0px 0px 4px 1px lightgray;
   width: 220px;
-  height:220px;
+  height: 220px;
   margin-bottom: 5px;
-
 }
 </style>

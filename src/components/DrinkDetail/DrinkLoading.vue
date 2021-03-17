@@ -1,7 +1,6 @@
 <template>
   <div class="detail">
     <div class="drink-detail" />
-
     <div drink="drink" class="drink-intro">
       <h2 class="name"></h2>
       <div class="img"></div>

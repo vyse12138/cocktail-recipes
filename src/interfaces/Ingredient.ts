@@ -1,3 +1,5 @@
+//  Drink ingredient interface
 export default interface Ingredient {
-  ingredient? : String;
+  strIngredient: String; // ingredient name
+  strMeasure: String; // ingredient measure
 }

@@ -27,7 +27,7 @@ export default interface Drink {
   strIngredient13: String;
   strIngredient14: String;
   strIngredient15: String;
-  
+
   strMeasure1: String;
   strMeasure2: String;
   strMeasure3: String;

@@ -40,7 +40,7 @@ export default defineComponent({
 .input {
   margin-left: auto;
   margin-right: auto;
-max-width: 700px;
+  max-width: 700px;
 }
 ::placeholder {
   color: lightgray;
@@ -52,7 +52,6 @@ input {
   border: 1px solid lightgray;
   transition: box-shadow 1.5s;
   box-shadow: 0px 0px 1px 1px lightgray;
-
 }
 input:focus {
   outline: none;

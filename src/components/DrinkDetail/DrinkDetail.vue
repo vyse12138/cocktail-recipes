@@ -1,6 +1,6 @@
 <template>
   <div class="drink-detail">
-    <div class="con">
+    <div class="container">
       <h1>
         {{ drink.strDrink }}
       </h1>
@@ -9,7 +9,7 @@
       <h3>Category: {{ drink.strCategory }}</h3>
       <p>Instruction: {{ drink.strInstructions }}</p>
 
-      <Ingredient
+      <IngredientDetail
         v-for="ingredient in ingredients"
         :key="ingredient"
         :ingredient="ingredient"
@@ -21,11 +21,13 @@
 <script lang="ts">
 import { defineComponent, PropType, toRefs } from "vue";
 import Drink from "../../interfaces/Drink";
-import Ingredient from "./Ingredient.vue";
+import Ingredient from "../../interfaces/Ingredient";
+
+import IngredientDetail from "./IngredientDetail.vue";
 
 export default defineComponent({
   components: {
-    Ingredient
+    IngredientDetail
   },
   props: {
     drink: {
@@ -34,29 +36,82 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { drink } = toRefs(props); // destructure props
+    const drink = props.drink; // no need to be reactive, destructure directly
     const ingredients = [
-      {[drink.value.strIngredient1 as string]: drink.value.strMeasure1},
-      {[drink.value.strIngredient2 as string]: drink.value.strMeasure2},
-      {[drink.value.strIngredient3 as string]: drink.value.strMeasure3},
-      {[drink.value.strIngredient4 as string]: drink.value.strMeasure4},
-      {[drink.value.strIngredient5 as string]: drink.value.strMeasure5},
-      {[drink.value.strIngredient6 as string]: drink.value.strMeasure6},
-      {[drink.value.strIngredient7 as string]: drink.value.strMeasure7},
-      {[drink.value.strIngredient8 as string]: drink.value.strMeasure8},
-      {[drink.value.strIngredient9 as string]: drink.value.strMeasure9},
-      {[drink.value.strIngredient10 as string]: drink.value.strMeasure10},
-      {[drink.value.strIngredient11 as string]: drink.value.strMeasure11},
-      {[drink.value.strIngredient12 as string]: drink.value.strMeasure12},
-      {[drink.value.strIngredient13 as string]: drink.value.strMeasure13},
-      {[drink.value.strIngredient14 as string]: drink.value.strMeasure14},
-      {[drink.value.strIngredient15 as string]: drink.value.strMeasure15},
-
+      // list of ingredients
+      {
+        strIngredient: drink.strIngredient1,
+        strMeasure: drink.strMeasure1
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient2,
+        strMeasure: drink.strMeasure2
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient3,
+        strMeasure: drink.strMeasure3
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient4,
+        strMeasure: drink.strMeasure4
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient5,
+        strMeasure: drink.strMeasure5
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient6,
+        strMeasure: drink.strMeasure6
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient7,
+        strMeasure: drink.strMeasure7
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient8,
+        strMeasure: drink.strMeasure8
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient9,
+        strMeasure: drink.strMeasure9
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient10,
+        strMeasure: drink.strMeasure10
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient11,
+        strMeasure: drink.strMeasure11
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient12,
+        strMeasure: drink.strMeasure12
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient13,
+        strMeasure: drink.strMeasure13
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient14,
+        strMeasure: drink.strMeasure14
+      } as Ingredient,
+      {
+        strIngredient: drink.strIngredient15,
+        strMeasure: drink.strMeasure15
+      } as Ingredient
     ].filter(ingredient => {
-      return !ingredient.hasOwnProperty(null as any);
-    }) as Array<Object>;
-    console.log(ingredients)
-    return { drink,ingredients};
+      // filter out empty or null ingredient
+      if (
+        ingredient.strIngredient === null ||
+        ingredient.strIngredient === ""
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    }) as Array<Ingredient>;
+
+    return { drink, ingredients };
   }
 });
 </script>
@@ -68,7 +123,7 @@ export default defineComponent({
   background-color: #ffffff;
   overflow: hidden;
 }
-.con {
+.container {
   margin: 10px;
 }
 </style>

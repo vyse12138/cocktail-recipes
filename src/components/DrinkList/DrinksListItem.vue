@@ -5,7 +5,7 @@
       <p>
         {{
           drink.strInstructions.length > 150
-            ? drink.strInstructions.slice(0, 150).concat('...')
+            ? drink.strInstructions.slice(0, 150).concat("...")
             : drink.strInstructions
         }}
       </p>
@@ -28,8 +28,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { drink } = toRefs(props);
-
+    const { drink } = toRefs(props); // destructure props
     return {
       drink
     };
@@ -40,7 +39,7 @@ export default defineComponent({
 <style scoped>
 a {
   color: black;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .drink {
