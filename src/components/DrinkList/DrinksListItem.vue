@@ -1,5 +1,5 @@
 <template>
-  <div class="drink">
+  <router-link :to="'/' + drink.strDrink" class="drink">
     <div class="drink-text">
       <h4 class="drink-text-title">{{ drink.strDrink }}</h4>
       <p>
@@ -12,7 +12,7 @@
     </div>
 
     <img class="drink-img" :src="drink.strDrinkThumb" :alt="drink.strDrink" />
-  </div>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -38,6 +38,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
+a {
+  color: black;
+  text-decoration: none
+}
+
 .drink {
   padding: 1.5rem 2rem;
   height: 100px;
