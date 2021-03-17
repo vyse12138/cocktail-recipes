@@ -24,6 +24,9 @@ export default defineComponent({
 .loading {
   margin: 10px;
   width: 700px;
+    box-shadow: 0px 0px 4px 1px lightgray;
+  border-radius: 0.3rem;
+
 }
 .drink {
   padding: 1.5rem 2rem;

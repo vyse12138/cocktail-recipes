@@ -50,11 +50,13 @@ input {
   border-radius: 0.3rem;
   font-size: 1.5rem;
   border: 1px solid lightgray;
-  transition: box-shadow 1s;
+  transition: box-shadow 1.5s;
+  box-shadow: 0px 0px 1px 1px lightgray;
+
 }
 input:focus {
   outline: none;
-  box-shadow: 0 0 3pt 2pt lightblue;
-  transition: box-shadow 1s;
+  box-shadow: 0 0 5px 3px #e08a91;
+  transition: box-shadow 1.5s;
 }
 </style>

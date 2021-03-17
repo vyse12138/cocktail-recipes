@@ -27,20 +27,19 @@ export default defineComponent({
     DrinksListEmpty
   },
   props: {
-    name: String
+    name: { type: String, required: true }
   },
   setup(props) {
     const loading = ref(true);
 
     const drinks = ref<Array<Drink>>();
     const { name } = toRefs(props); // destructure props
-
     // fetch abort controller setup
     let controller = new AbortController();
     let signal = controller.signal;
 
     // initial fetch
-    fetchDrinks(props.name as String, { signal }).then(value => {
+    fetchDrinks(name.value, { signal }).then(value => {
       if (value !== undefined) {
         drinks.value = value as Drink[];
         loading.value = false;
@@ -73,7 +72,6 @@ export default defineComponent({
 .drinks {
   margin: 10px;
   width: 700px;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
-  border-radius: 2px;
+  box-shadow: 0px 0px 4px 1px lightgray;
 }
 </style>

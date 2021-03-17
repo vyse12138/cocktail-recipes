@@ -10,7 +10,7 @@
   height: 300px;
   background-color: #ffffff;
 
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  box-shadow: 0px 0px 4px 1px lightgray;
   border-radius: 2px;
 }
 </style>
