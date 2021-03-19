@@ -32,7 +32,7 @@ export default defineComponent({
   setup(props) {
     const loading = ref(true);
 
-    const drinks = ref<Array<Drink>>();
+    const drinks = ref<Drink[]>();
     const { name } = toRefs(props); // destructure props
     // fetch abort controller setup
     let controller = new AbortController();
@@ -40,11 +40,13 @@ export default defineComponent({
 
     // initial fetch
     fetchDrinks(name.value, { signal }).then(value => {
-      if (value !== undefined) {
-        drinks.value = value as Drink[];
-        loading.value = false;
-      }
-    });
+      drinks.value = value;
+    }).catch (e=>{
+      console.log(e)
+    }).finally(() => {
+      loading.value = false;
+
+    })
 
     // fetch on name chage
     watch(name as Ref<String>, n => {
@@ -53,11 +55,14 @@ export default defineComponent({
       controller = new AbortController();
       signal = controller.signal;
       fetchDrinks(n, { signal }).then(value => {
-        if (value !== undefined) {
-          drinks.value = value as Drink[];
-          loading.value = false;
-        }
-      });
+        drinks.value = value;
+        loading.value = false;
+      }).catch (e=>{
+      console.log(e)
+    }).finally(() => {
+      loading.value = false;
+
+    })
     });
 
     return {

@@ -29,6 +29,7 @@ export default defineComponent({
   },
   setup(props) {
     const { drink } = toRefs(props); // destructure props
+    
     return {
       drink
     };
