@@ -1,8 +1,20 @@
 <template>
-  <div class="a"></div>
+  <TopRankedList class="a"></TopRankedList>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import TopRankedList from './TopRankedList.vue'
+export default defineComponent({
+  components: {
+    TopRankedList
+  },
+  setup() {
+    
+  },
+})
+</script>
+
 
 <style scoped>
 .a {

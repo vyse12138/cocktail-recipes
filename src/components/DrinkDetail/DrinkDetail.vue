@@ -122,6 +122,8 @@ export default defineComponent({
   box-shadow: 0px 0px 4px 1px lightgray;
   background-color: #ffffff;
   overflow: hidden;
+
+  height: 500px;
 }
 .container {
   margin: 10px;
