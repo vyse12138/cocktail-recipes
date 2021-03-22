@@ -3,7 +3,7 @@
     <img class="img" height="50" :src="drink.strDrinkThumb" />
     <div class="detail">
       <h3 class="title">{{ drink.strDrink }}</h3>
-      <p class="intro"> {{ drink.strIngredient1 }}</p>
+      <!-- <p class="intro"> {{ drink.strIngredient1 }}</p> -->
     </div>
   </div>
 </template>
@@ -31,7 +31,6 @@ export default defineComponent({
 <style scoped>
 .top-ranked {
   display: flex;
-  text-align: left;
   padding: 0.6rem 1.5rem;
 }
 .detail {
@@ -43,9 +42,8 @@ export default defineComponent({
   flex: 0 0;
 }
 .title {
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
   margin: -0.6rem 0;
 }
-.intro {
-}
+
 </style>

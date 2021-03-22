@@ -1,7 +1,7 @@
 <template>
   <router-link :to="'/' + drink.strDrink" class="drink">
     <div class="drink-text">
-      <h4 class="drink-text-title">{{ drink.strDrink }}</h4>
+      <h3 class="drink-text-title">{{ drink.strDrink }}</h3>
       <p>
         {{
           drink.strInstructions.length > 150
