@@ -1,4 +1,4 @@
-# vue-cocktail
+# cocktail-recipes
 
 Cocktail recipes app with Vue 3 + TypeScript + Vite
 
